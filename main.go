@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/GribnoyGrib/go-sheets/server"
+	"github.com/twelc/go-sheets/server"
 )
 
 func main() {

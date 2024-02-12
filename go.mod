@@ -1,3 +1,3 @@
-module github.com/GribnoyGrib/go-sheets
+module github.com/twelc/go-sheets
 
-go 1.21.5
+go 1.21.6

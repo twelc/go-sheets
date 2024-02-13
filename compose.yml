@@ -2,10 +2,16 @@ version: '3.8'
 
 services:
   web:
-    build: .
-    container_name: web
+    build: ./src
+    container_name: sheet
     ports:
       - "3000:3000"
     volumes:
-      - .:/usr/src/app
-    command: ./go-sheets
+      - ./src:/usr/src/app
+    command: go run github.com/twelc/go-sheets -b 0.0.0.0
+  parser:
+    build: ./parser
+    container_name: parser
+    volumes:
+      - ./parser:/usr/src/app
+    command: bash -c "service tor start && python ./nb_parser.py"

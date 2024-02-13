@@ -1,4 +1,87 @@
-html, body {
+html, body{
     width: 100%;
     height: 100%;
+}
+
+
+main {
+    display: block;
+    
+}
+
+button {
+    display: block;
+    width: 15rem;
+    height: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em;
+    border-radius: 15px;
+    font-size: x-large;
+    background-color: rgb(0, 174, 255);
+}
+
+button:hover {
+    transform: scale(1.05);
+    
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.filters_wrapper {
+    display: block;
+    width: 30em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filters {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.table_wrapper {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85vh;
+    text-align: center;
+    margin-top: 10px;
+}
+
+input {
+    display: inline-block;
+    width: 6em;
+    height: 2em;
+    border-radius: 15px;
+    
+    padding-left: 3%;
+}
+
+.search {
+    display: block;
+    width: 85%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: large;
+
+}
+
+table {
+    display: inline-block;
+}
+
+table tr:nth-child(odd) td{
+    background-color: rgb(236, 236, 236);
+}
+table tr:nth-child(even) td{
+    background-color: rgb(223, 223, 223);
 }

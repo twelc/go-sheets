@@ -1,33 +1,27 @@
-window.onload = loadData
 
-function loadData() {
-    var url="https://docs.google.com/spreadsheets/d/141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk/edit#gid=0";
-    xmlhttp=new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if(xmlhttp.readyState == 4 && xmlhttp.status==200){
-        document.getElementById("table_wrapper").innerHTML = xmlhttp.responseText;
-      }
-      else{
-        alert(xmlhttp.status)
-      }
-    };
-    xmlhttp.open("GET",url,true);
-    xmlhttp.send(null);
-  }
 
-function getValues(spreadsheetId, range, callback) {
-    try {
-      gapi.client.sheets.spreadsheets.values.get({
-        spreadsheetId: spreadsheetId,
-        range: range,
-      }).then((response) => {
-        const result = response.result;
-        const numRows = result.values ? result.values.length : 0;
-        console.log(`${numRows} rows retrieved.`);
-        if (callback) callback(response);
-      });
-    } catch (err) {
-      document.getElementById('content').innerText = err.message;
-      return;
-    }
+$("#send").click(function (){
+  q = $("#querry").val().toLowerCase()
+  min = $("#min").val()
+  max = $("#max").val()
+  
+  if (q !== ""){
+    $("tr").hide();
+    $("td").filter(function() {
+      return $(this).text().toLowerCase().indexOf(q) !== -1;
+    }).parent().show();
+  }else{
+    $("tr").show();
   }
+  if(min !== ""){
+    $(".2").filter(function() {
+      return parseInt($(this).text()) < parseInt(min);
+    }).parent().hide();
+  }
+  if(max !== ""){
+    $(".2").filter(function() {
+      return parseInt($(this).text()) > parseInt(max);
+    }).parent().hide();
+  }
+  
+})

@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <body>
-    
-<main>
-    <header>
+    <div class="layout">
+        <main>
+            <div class="filters_wrapper">
+                
+                    <input id="querry" placeholder="Поиск" class="search">
+                    <div class="filters">
+                        <h1>Количество Предложений</h1>
+                        <label for="min">От</label>
+                        <input id="min" type="number">
+                        <label for="max">До</label>
+                        <input id="max" type="number">
+                    </div>
+                    <button id="send">Подобрать</button>
 
-        <input autofocus class="search-input" value=""
-        placeholder="Enter a news topic" type="search" name="q">
-    </header>
-    <div class="table_wrapper">
-        
+                
+            </div>
+            
+            <div class="table_wrapper">
+                <table>
+                    {{range $ind, $row := .Data}}
+                    <tr>
+                        {{range $ind, $cell := $row }}
+                        <td class="{{ $ind }}"> {{ $cell }}</td>
+                        {{end}}
+                    </tr>
+                    {{end}}
+                </table>
+            </div>
+        </main>
     </div>
-</main>
-
-<link rel="stylesheet" href="/assets/style.css">
-<script src="/assets/loader.js"></script>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/assets/loader.js"></script>
 </body>

@@ -32,7 +32,7 @@ button:active {
 
 .wrapper {
     display: block;
-    width: 30em;
+    width: 40em;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15px;
@@ -89,4 +89,11 @@ td{
 	padding: 5px 10px;
 	border: 1px solid #eee;
 	text-align: left;
+}
+
+@media only screen and (max-width : 992px) {
+    .wrapper {
+        width: 100%;
+
+    }
 }

@@ -1488,3 +1488,79 @@ Traceback (most recent call last):
           └ <class 'requests.exceptions.ConnectionError'>
 
 requests.exceptions.ConnectionError: HTTPSConnectionPool(host='krisha.kz', port=443): Max retries exceeded with url: /a/ajaxGetSearchNbResults?search-url=/arenda/kvartiry/almaty/?das%5Bmap.complex%5D=10&isOnMap=0 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb0cb8635d0>: Failed to establish a new connection: Error connecting to SOCKS5 proxy localhost:9150: [Errno 111] Connection refused'))
+2024-02-13 23:45:35.031 | ERROR    | __main__:parse_data:95 - error
+Traceback (most recent call last):
+
+  File "/mnt/E83C5EC13C5E8A88/projects/go-table-editor/parser/./nb_parser.py", line 104, in <module>
+    parse_data()
+    └ <function parse_data at 0x7fb4264b84a0>
+
+> File "/mnt/E83C5EC13C5E8A88/projects/go-table-editor/parser/./nb_parser.py", line 83, in parse_data
+    d = dists.get_dist(csrf.lower().strip())
+        │     │        │    └ <method 'lower' of 'str' objects>
+        │     │        └ ' Abay Residence '
+        │     └ <function district_manager.get_dist at 0x7fb42768f4c0>
+        └ <districts.district_manager object at 0x7fb4289ed950>
+
+  File "/mnt/E83C5EC13C5E8A88/projects/go-table-editor/parser/districts.py", line 48, in get_dist
+    if a[1] <= 80:
+       └ None
+
+TypeError: 'NoneType' object is not subscriptable
+2024-02-13 23:54:42.509 | ERROR    | __main__:parse_data:95 - error
+Traceback (most recent call last):
+
+  File "/mnt/E83C5EC13C5E8A88/projects/go-table-editor/parser/./nb_parser.py", line 104, in <module>
+    parse_data()
+    └ <function parse_data at 0x7f1048c65760>
+
+> File "/mnt/E83C5EC13C5E8A88/projects/go-table-editor/parser/./nb_parser.py", line 83, in parse_data
+    d = dists.get_dist(csrf.lower().strip())
+        │     │        │    └ <method 'lower' of 'str' objects>
+        │     │        └ ' Abay Residence '
+        │     └ <function district_manager.get_dist at 0x7f1049b0fec0>
+        └ <districts.district_manager object at 0x7f104b21bfd0>
+
+  File "/mnt/E83C5EC13C5E8A88/projects/go-table-editor/parser/districts.py", line 50, in get_dist
+    if a[1] <= 80:
+       └ None
+
+TypeError: 'NoneType' object is not subscriptable
+2024-02-13 23:55:46.086 | ERROR    | __main__:parse_data:95 - error
+Traceback (most recent call last):
+
+  File "/mnt/E83C5EC13C5E8A88/projects/go-table-editor/parser/./nb_parser.py", line 104, in <module>
+    parse_data()
+    └ <function parse_data at 0x7f212b809760>
+
+> File "/mnt/E83C5EC13C5E8A88/projects/go-table-editor/parser/./nb_parser.py", line 83, in parse_data
+    d = dists.get_dist(csrf.lower().strip())
+        │     │        │    └ <method 'lower' of 'str' objects>
+        │     │        └ ' Abay Residence '
+        │     └ <function district_manager.get_dist at 0x7f212c293ec0>
+        └ <districts.district_manager object at 0x7f212dd1ffd0>
+
+  File "/mnt/E83C5EC13C5E8A88/projects/go-table-editor/parser/districts.py", line 50, in get_dist
+    if a[1] <= 80:
+       └ None
+
+TypeError: 'NoneType' object is not subscriptable
+2024-02-13 23:58:13.156 | ERROR    | __main__:parse_data:95 - error
+Traceback (most recent call last):
+
+  File "/mnt/E83C5EC13C5E8A88/projects/go-table-editor/parser/./nb_parser.py", line 104, in <module>
+    parse_data()
+    └ <function parse_data at 0x7fae73ca2c00>
+
+> File "/mnt/E83C5EC13C5E8A88/projects/go-table-editor/parser/./nb_parser.py", line 83, in parse_data
+    d = dists.get_dist(csrf.lower().strip())
+        │     │        │    └ <method 'lower' of 'str' objects>
+        │     │        └ ' Abay Residence '
+        │     └ <function district_manager.get_dist at 0x7fae74746200>
+        └ <districts.district_manager object at 0x7fae7621bfd0>
+
+  File "/mnt/E83C5EC13C5E8A88/projects/go-table-editor/parser/districts.py", line 50, in get_dist
+    if a[1] <= 80:
+       └ None
+
+TypeError: 'NoneType' object is not subscriptable

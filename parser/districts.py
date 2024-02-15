@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup as bs4
 import json
 from fuzzywuzzy import process
-
+import cloudscraper
 
 
 class district_manager:
@@ -25,12 +25,14 @@ class district_manager:
             print("page: " + str(page))
             if page>30:
                 break
-            r = requests.get(url=q.format(str(page)))
+            scraper = cloudscraper.create_scraper(delay=10) 
+            r = scraper.get(url=q.format(str(page)))
             soup = bs4(r.text, "html.parser")
             wrapper = soup.find("div", class_="b-search__list js-search-list js-search-complex-list style-grid active")
             try:
                 items = wrapper.findChildren("div", class_="b-snippet__wrapper swiper-slide js-project-item")
             except AttributeError:
+                print(soup)
                 break
             for item in items:
                 rc = str(item.findChild("h2").text).lower().replace("жк", "").strip()

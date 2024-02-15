@@ -58,7 +58,7 @@ def parse_data():
             start = datetime.datetime.now()
             i+=1
             print("\033[94m=====================================\033[0m")
-            print("i =\033[92m " + str(i) + '\033[0m')
+            print(str(datetime.datetime.now()) + " i =\033[92m " + str(i) + '\033[0m')
             
             
             
@@ -103,7 +103,7 @@ if __name__ == "__main__":
     next = datetime.datetime.now() + datetime.timedelta(days=1)
     parse_data()
     while True:
-        time.sleep(100)
+        time.sleep(10)
         if datetime.datetime.now() > next:
             next = datetime.datetime.now() + datetime.timedelta(days=1)
             parse_data()

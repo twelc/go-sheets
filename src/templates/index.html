@@ -2,7 +2,7 @@
 <body>
     <div class="layout">
         <main>
-            <div class="filters_wrapper">
+            <div class="wrapper">
                 
                     <input id="querry" placeholder="Поиск" class="search">
                     <div class="filters">
@@ -17,8 +17,15 @@
                 
             </div>
             
-            <div class="table_wrapper">
+            <div class="wrapper">
                 <table>
+                    <thead>
+                        <tr>
+                            <th>Район</th>
+                            <th>Жилой комплекс</th>
+                            <th>Предложений</th>
+                        </tr>
+                    </thead>
                     {{range $ind, $row := .Data}}
                     <tr>
                         {{range $ind, $cell := $row }}

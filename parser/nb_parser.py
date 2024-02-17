@@ -51,7 +51,6 @@ def parse_data():
     writer.create_tmp()
     socks.set_default_proxy(socks.SOCKS5, "localhost", 9150)
     socket.socket = socks.socksocket
-    dists.get_districts()
     all_start = datetime.datetime.now()
     while True:
         try:

@@ -104,7 +104,7 @@ func GetFiltered(querry string, min string, max string, config Config) [][]strin
 }
 
 func AppendData(name string, distrct string, value string, ind int, config Config) {
-	config.table_range = "history!A:A"
+	config.table_range = "A:A"
 	header := GetData(config)
 	row := -1
 	for i, val := range header.Values {
@@ -120,10 +120,10 @@ func AppendData(name string, distrct string, value string, ind int, config Confi
 	if row == -1 {
 		row = len(header.Values) + 1
 		var svr sheets.ValueRange
-		svr.Values = append(svr.Values, []interface{}{value})
+		svr.Values = append(svr.Values, []interface{}{name, distrct})
 		srv.Spreadsheets.Values.Update(config.sheetid, fmt.Sprintf("history!A%v:B%v", row, row), &svr).ValueInputOption("RAW").Do()
 	}
 
-	srv.Spreadsheets.Values.Update(config.sheetid, fmt.Sprintf("history!R%vC%v:R%vC%v", row, ind+2, row, ind+2), &vr).ValueInputOption("RAW").Do()
+	srv.Spreadsheets.Values.Update(config.sheetid, fmt.Sprintf("history!R%vC%v:R%vC%v", row, ind+2, row, ind+3), &vr).ValueInputOption("RAW").Do()
 
 }

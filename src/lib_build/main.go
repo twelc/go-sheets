@@ -11,10 +11,10 @@ func main() {
 		"/mnt/E83C5EC13C5E8A88/projects/go-table-editor/src/config/credentials.json",
 		"141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk",
 		"history",
-		"Test_name",
+		"Test_name1",
 		"Test_district",
-		"Test_value",
-		0,
+		"Test_value2",
+		2,
 	)
 }
 

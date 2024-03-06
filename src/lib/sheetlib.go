@@ -35,7 +35,7 @@ func GetData(config Config, range_ string) *sheets.ValueRange {
 	srv := GetClient(&config)
 
 	spreadsheetId := config.sheetid
-	readRange := fmt.Sprintf("%v!%v", config.table_name, config.table_range)
+	readRange := fmt.Sprintf("%v!%v", config.table_name, range_)
 	resp, err := srv.Spreadsheets.Values.Get(spreadsheetId, readRange).Do()
 	if err != nil {
 		log.Fatalf("Unable to retrieve data from sheet: %v", err)

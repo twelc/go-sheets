@@ -8,7 +8,7 @@ services:
       - "3000:3000"
     volumes:
       - ./src:/usr/src/app
-    command: go run github.com/twelc/go-sheets -b 0.0.0.0
+    command: /app/hello
   parser:
     build: ./parser
     container_name: parser

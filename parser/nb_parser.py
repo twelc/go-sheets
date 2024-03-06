@@ -4,7 +4,7 @@ import datetime
 import socks
 import socket
 import writer
-
+import sheet_lib
 import time
 
 
@@ -14,6 +14,11 @@ print("started krisha parsing")
 dists = districts.district_manager()
 querry = "https://krisha.kz/a/ajaxGetSearchNbResults?search-url=/arenda/kvartiry/almaty/?das[map.complex]={}&isOnMap=0"
 querry2 = "https://krisha.kz/arenda/kvartiry/almaty/?das[map.complex]={}"
+sheet_lib.make_config('./roofsparser-addef44f7a5a.json',
+                      "141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk",
+                      "history")
+
+Global_index = 0
 
 logger.add("log.log")
 
@@ -56,11 +61,6 @@ def parse_data():
         try:
             start = datetime.datetime.now()
             i+=1
-            print("\033[94m=====================================\033[0m")
-            print(str(datetime.datetime.now()) + " i =\033[92m " + str(i) + '\033[0m')
-            
-            
-            
             if i > 3500:
                 break
 
@@ -68,7 +68,6 @@ def parse_data():
             values = ('"nb":', '}')  
             nb = r.text[r.text.find(values[0]) + len(values[0]):]
             nb = nb[:nb.find(values[1])]
-            print("nb =\033[92m " + str(nb) + '\033[0m')
             r = requests.get(url=querry2.format(str(i)), headers=headers)
             
             txt = r.text
@@ -77,14 +76,13 @@ def parse_data():
             values = ('Аренда квартир помесячно в ЖК', 'в Алматы')  
             csrf = txt[txt.find(values[0]) + len(values[0]):]
             csrf = csrf[:csrf.find(values[1])]
-            print(csrf)
-            print("time: \033[92m" + str(datetime.datetime.now() - start) + '\033[0m' + "| abs_time: \033[93m" + str(datetime.datetime.now() - all_start) + '\033[0m')
             d = dists.get_dist(csrf.lower().strip())
             try:
                 int(csrf.lower().strip())
             except:
                 write(f"{d}, {csrf}: {str(nb)}")
                 writer.save_data([[d, csrf, str(nb)]], index)
+                sheet_lib.append_data(csrf, d, str(nb), Global_index)
                 index += 1
             else:
                 continue
@@ -104,6 +102,7 @@ if __name__ == "__main__":
     while True:
         time.sleep(10)
         if datetime.datetime.now() > next:
+            Global_index+=1
             next = datetime.datetime.now() + datetime.timedelta(days=1)
             parse_data()
 

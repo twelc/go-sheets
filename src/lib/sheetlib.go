@@ -30,7 +30,7 @@ func GetClient(config *Config) *sheets.Service {
 }
 
 // Retrieve a token, saves the token, then returns the generated client.
-func GetData(config Config) *sheets.ValueRange {
+func GetData(config Config, range_ string) *sheets.ValueRange {
 
 	srv := GetClient(&config)
 
@@ -43,8 +43,9 @@ func GetData(config Config) *sheets.ValueRange {
 	return resp
 }
 
-func GetAll(config Config) [][]string {
-	resp := GetData(config)
+func GetAll(config Config, range_ string) [][]string {
+
+	resp := GetData(config, range_)
 	table := [][]string{}
 
 	if len(resp.Values) == 0 {
@@ -62,8 +63,8 @@ func GetAll(config Config) [][]string {
 	return table
 }
 
-func GetFiltered(querry string, min string, max string, config Config) [][]string {
-	resp := GetData(config)
+func GetFiltered(querry string, min string, max string, range_ string, config Config) [][]string {
+	resp := GetData(config, range_)
 	table := [][]string{}
 
 	if len(resp.Values) == 0 {
@@ -104,12 +105,11 @@ func GetFiltered(querry string, min string, max string, config Config) [][]strin
 }
 
 func AppendData(name string, distrct string, value string, ind int, config Config) {
-	config.table_range = "A:A"
-	header := GetData(config)
+	header := GetData(config, "A:A")
 	row := -1
 	for i, val := range header.Values {
 		if val[0].(string) == name {
-			row = i
+			row = i + 1
 			break
 		}
 	}
@@ -123,7 +123,15 @@ func AppendData(name string, distrct string, value string, ind int, config Confi
 		svr.Values = append(svr.Values, []interface{}{name, distrct})
 		srv.Spreadsheets.Values.Update(config.sheetid, fmt.Sprintf("history!A%v:B%v", row, row), &svr).ValueInputOption("RAW").Do()
 	}
+	fmt.Println(row, ind)
 
-	srv.Spreadsheets.Values.Update(config.sheetid, fmt.Sprintf("history!R%vC%v:R%vC%v", row, ind+2, row, ind+3), &vr).ValueInputOption("RAW").Do()
+	srv.Spreadsheets.Values.Update(config.sheetid, fmt.Sprintf("history!R%vC%v:R%vC%v", row, ind+3, row, ind+4), &vr).ValueInputOption("RAW").Do()
 
+}
+
+func SetLine(values []interface{}, range_ string, config Config) {
+	srv := GetClient(&config)
+	var vr sheets.ValueRange
+	vr.Values = append(vr.Values, values)
+	srv.Spreadsheets.Values.Update(config.sheetid, fmt.Sprintf("%v!%v", config.table_name, range_), &vr).ValueInputOption("RAW").Do()
 }

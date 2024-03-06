@@ -1564,3 +1564,925 @@ Traceback (most recent call last):
        └ None
 
 TypeError: 'NoneType' object is not subscriptable
+2024-03-06 03:58:43.430 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Abay Residence '
+
+ValueError: invalid literal for int() with base 10: 'abay residence'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7f8ddc2acfe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '1'
+    │         │           │  └ ' Abay Residence '
+    │         │           └ 'бостандыкский р-н'
+    │         └ <function append_data at 0x7f8de1056c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 26, in append_data
+    lib.AppendData(cred, sheet_id, sheet_name, obj_name, district, value, index)
+    │   │          │     │         │           │         │         │      └ 1
+    │   │          │     │         │           │         │         └ '1'
+    │   │          │     │         │           │         └ ' Abay Residence '
+    │   │          │     │         │           └ 'бостандыкский р-н'
+    │   │          │     │         └ 'history'
+    │   │          │     └ '141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk'
+    │   │          └ './roofsparser-addef44f7a5a.json'
+    │   └ <_FuncPtr object at 0x7f8de1001cc0>
+    └ <CDLL './sheet_lib/lib.so', handle 560cc51df520 at 0x7f8de1d2df10>
+
+ctypes.ArgumentError: argument 1: TypeError: wrong type
+2024-03-06 03:58:46.652 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Apple Town '
+
+ValueError: invalid literal for int() with base 10: 'apple town'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7f8ddc2acfe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '8'
+    │         │           │  └ ' Apple Town '
+    │         │           └ 'ауэзовский р-н'
+    │         └ <function append_data at 0x7f8de1056c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 26, in append_data
+    lib.AppendData(cred, sheet_id, sheet_name, obj_name, district, value, index)
+    │   │          │     │         │           │         │         │      └ 1
+    │   │          │     │         │           │         │         └ '8'
+    │   │          │     │         │           │         └ ' Apple Town '
+    │   │          │     │         │           └ 'ауэзовский р-н'
+    │   │          │     │         └ 'history'
+    │   │          │     └ '141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk'
+    │   │          └ './roofsparser-addef44f7a5a.json'
+    │   └ <_FuncPtr object at 0x7f8de1001cc0>
+    └ <CDLL './sheet_lib/lib.so', handle 560cc51df520 at 0x7f8de1d2df10>
+
+ctypes.ArgumentError: argument 1: TypeError: wrong type
+2024-03-06 03:58:49.056 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' GreenLine.Asyl Mura Jubanov '
+
+ValueError: invalid literal for int() with base 10: 'greenline.asyl mura jubanov'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7f8ddc2acfe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '0'
+    │         │           │  └ ' GreenLine.Asyl Mura Jubanov '
+    │         │           └ 'Район не определён'
+    │         └ <function append_data at 0x7f8de1056c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 26, in append_data
+    lib.AppendData(cred, sheet_id, sheet_name, obj_name, district, value, index)
+    │   │          │     │         │           │         │         │      └ 1
+    │   │          │     │         │           │         │         └ '0'
+    │   │          │     │         │           │         └ ' GreenLine.Asyl Mura Jubanov '
+    │   │          │     │         │           └ 'Район не определён'
+    │   │          │     │         └ 'history'
+    │   │          │     └ '141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk'
+    │   │          └ './roofsparser-addef44f7a5a.json'
+    │   └ <_FuncPtr object at 0x7f8de1001cc0>
+    └ <CDLL './sheet_lib/lib.so', handle 560cc51df520 at 0x7f8de1d2df10>
+
+ctypes.ArgumentError: argument 1: TypeError: wrong type
+2024-03-06 03:58:51.590 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Gorky Park Residence '
+
+ValueError: invalid literal for int() with base 10: 'gorky park residence'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7f8ddc2acfe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '4'
+    │         │           │  └ ' Gorky Park Residence '
+    │         │           └ 'медеуский р-н'
+    │         └ <function append_data at 0x7f8de1056c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 26, in append_data
+    lib.AppendData(cred, sheet_id, sheet_name, obj_name, district, value, index)
+    │   │          │     │         │           │         │         │      └ 1
+    │   │          │     │         │           │         │         └ '4'
+    │   │          │     │         │           │         └ ' Gorky Park Residence '
+    │   │          │     │         │           └ 'медеуский р-н'
+    │   │          │     │         └ 'history'
+    │   │          │     └ '141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk'
+    │   │          └ './roofsparser-addef44f7a5a.json'
+    │   └ <_FuncPtr object at 0x7f8de1001cc0>
+    └ <CDLL './sheet_lib/lib.so', handle 560cc51df520 at 0x7f8de1d2df10>
+
+ctypes.ArgumentError: argument 1: TypeError: wrong type
+2024-03-06 03:58:55.088 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Европолис '
+
+ValueError: invalid literal for int() with base 10: 'европолис'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7f8ddc2acfe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '35'
+    │         │           │  └ ' Европолис '
+    │         │           └ 'медеуский р-н'
+    │         └ <function append_data at 0x7f8de1056c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 26, in append_data
+    lib.AppendData(cred, sheet_id, sheet_name, obj_name, district, value, index)
+    │   │          │     │         │           │         │         │      └ 1
+    │   │          │     │         │           │         │         └ '35'
+    │   │          │     │         │           │         └ ' Европолис '
+    │   │          │     │         │           └ 'медеуский р-н'
+    │   │          │     │         └ 'history'
+    │   │          │     └ '141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk'
+    │   │          └ './roofsparser-addef44f7a5a.json'
+    │   └ <_FuncPtr object at 0x7f8de1001cc0>
+    └ <CDLL './sheet_lib/lib.so', handle 560cc51df520 at 0x7f8de1d2df10>
+
+ctypes.ArgumentError: argument 1: TypeError: wrong type
+2024-03-06 03:58:58.569 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' White Fort '
+
+ValueError: invalid literal for int() with base 10: 'white fort'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7f8ddc2acfe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '1'
+    │         │           │  └ ' White Fort '
+    │         │           └ 'медеуский р-н'
+    │         └ <function append_data at 0x7f8de1056c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 26, in append_data
+    lib.AppendData(cred, sheet_id, sheet_name, obj_name, district, value, index)
+    │   │          │     │         │           │         │         │      └ 1
+    │   │          │     │         │           │         │         └ '1'
+    │   │          │     │         │           │         └ ' White Fort '
+    │   │          │     │         │           └ 'медеуский р-н'
+    │   │          │     │         └ 'history'
+    │   │          │     └ '141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk'
+    │   │          └ './roofsparser-addef44f7a5a.json'
+    │   └ <_FuncPtr object at 0x7f8de1001cc0>
+    └ <CDLL './sheet_lib/lib.so', handle 560cc51df520 at 0x7f8de1d2df10>
+
+ctypes.ArgumentError: argument 1: TypeError: wrong type
+2024-03-06 04:01:59.303 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Abay Residence '
+
+ValueError: invalid literal for int() with base 10: 'abay residence'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7f3601580fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '1'
+    │         │           │  └ ' Abay Residence '
+    │         │           └ 'бостандыкский р-н'
+    │         └ <function append_data at 0x7f36503cec00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 26, in append_data
+    lib.AppendData(b''.join(cred), b''.join(sheet_id), b''.join(sheet_name), obj_name, district, value, index)
+    │   │                   │               │                   │            │         │         │      └ 1
+    │   │                   │               │                   │            │         │         └ '1'
+    │   │                   │               │                   │            │         └ ' Abay Residence '
+    │   │                   │               │                   │            └ 'бостандыкский р-н'
+    │   │                   │               │                   └ 'history'
+    │   │                   │               └ '141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk'
+    │   │                   └ './roofsparser-addef44f7a5a.json'
+    │   └ <_FuncPtr object at 0x7f3650375cc0>
+    └ <CDLL './sheet_lib/lib.so', handle 563879c09fc0 at 0x7f36503d15d0>
+
+TypeError: sequence item 0: expected a bytes-like object, str found
+2024-03-06 04:02:02.243 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Apple Town '
+
+ValueError: invalid literal for int() with base 10: 'apple town'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7f3601580fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '8'
+    │         │           │  └ ' Apple Town '
+    │         │           └ 'ауэзовский р-н'
+    │         └ <function append_data at 0x7f36503cec00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 26, in append_data
+    lib.AppendData(b''.join(cred), b''.join(sheet_id), b''.join(sheet_name), obj_name, district, value, index)
+    │   │                   │               │                   │            │         │         │      └ 1
+    │   │                   │               │                   │            │         │         └ '8'
+    │   │                   │               │                   │            │         └ ' Apple Town '
+    │   │                   │               │                   │            └ 'ауэзовский р-н'
+    │   │                   │               │                   └ 'history'
+    │   │                   │               └ '141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk'
+    │   │                   └ './roofsparser-addef44f7a5a.json'
+    │   └ <_FuncPtr object at 0x7f3650375cc0>
+    └ <CDLL './sheet_lib/lib.so', handle 563879c09fc0 at 0x7f36503d15d0>
+
+TypeError: sequence item 0: expected a bytes-like object, str found
+2024-03-06 04:02:05.547 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' GreenLine.Asyl Mura Jubanov '
+
+ValueError: invalid literal for int() with base 10: 'greenline.asyl mura jubanov'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7f3601580fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '0'
+    │         │           │  └ ' GreenLine.Asyl Mura Jubanov '
+    │         │           └ 'Район не определён'
+    │         └ <function append_data at 0x7f36503cec00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 26, in append_data
+    lib.AppendData(b''.join(cred), b''.join(sheet_id), b''.join(sheet_name), obj_name, district, value, index)
+    │   │                   │               │                   │            │         │         │      └ 1
+    │   │                   │               │                   │            │         │         └ '0'
+    │   │                   │               │                   │            │         └ ' GreenLine.Asyl Mura Jubanov '
+    │   │                   │               │                   │            └ 'Район не определён'
+    │   │                   │               │                   └ 'history'
+    │   │                   │               └ '141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk'
+    │   │                   └ './roofsparser-addef44f7a5a.json'
+    │   └ <_FuncPtr object at 0x7f3650375cc0>
+    └ <CDLL './sheet_lib/lib.so', handle 563879c09fc0 at 0x7f36503d15d0>
+
+TypeError: sequence item 0: expected a bytes-like object, str found
+2024-03-06 04:02:08.917 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Gorky Park Residence '
+
+ValueError: invalid literal for int() with base 10: 'gorky park residence'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7f3601580fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '4'
+    │         │           │  └ ' Gorky Park Residence '
+    │         │           └ 'медеуский р-н'
+    │         └ <function append_data at 0x7f36503cec00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 26, in append_data
+    lib.AppendData(b''.join(cred), b''.join(sheet_id), b''.join(sheet_name), obj_name, district, value, index)
+    │   │                   │               │                   │            │         │         │      └ 1
+    │   │                   │               │                   │            │         │         └ '4'
+    │   │                   │               │                   │            │         └ ' Gorky Park Residence '
+    │   │                   │               │                   │            └ 'медеуский р-н'
+    │   │                   │               │                   └ 'history'
+    │   │                   │               └ '141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk'
+    │   │                   └ './roofsparser-addef44f7a5a.json'
+    │   └ <_FuncPtr object at 0x7f3650375cc0>
+    └ <CDLL './sheet_lib/lib.so', handle 563879c09fc0 at 0x7f36503d15d0>
+
+TypeError: sequence item 0: expected a bytes-like object, str found
+2024-03-06 04:02:12.203 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Европолис '
+
+ValueError: invalid literal for int() with base 10: 'европолис'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7f3601580fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '35'
+    │         │           │  └ ' Европолис '
+    │         │           └ 'медеуский р-н'
+    │         └ <function append_data at 0x7f36503cec00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 26, in append_data
+    lib.AppendData(b''.join(cred), b''.join(sheet_id), b''.join(sheet_name), obj_name, district, value, index)
+    │   │                   │               │                   │            │         │         │      └ 1
+    │   │                   │               │                   │            │         │         └ '35'
+    │   │                   │               │                   │            │         └ ' Европолис '
+    │   │                   │               │                   │            └ 'медеуский р-н'
+    │   │                   │               │                   └ 'history'
+    │   │                   │               └ '141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk'
+    │   │                   └ './roofsparser-addef44f7a5a.json'
+    │   └ <_FuncPtr object at 0x7f3650375cc0>
+    └ <CDLL './sheet_lib/lib.so', handle 563879c09fc0 at 0x7f36503d15d0>
+
+TypeError: sequence item 0: expected a bytes-like object, str found
+2024-03-06 04:02:14.994 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' White Fort '
+
+ValueError: invalid literal for int() with base 10: 'white fort'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7f3601580fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '1'
+    │         │           │  └ ' White Fort '
+    │         │           └ 'медеуский р-н'
+    │         └ <function append_data at 0x7f36503cec00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 26, in append_data
+    lib.AppendData(b''.join(cred), b''.join(sheet_id), b''.join(sheet_name), obj_name, district, value, index)
+    │   │                   │               │                   │            │         │         │      └ 1
+    │   │                   │               │                   │            │         │         └ '1'
+    │   │                   │               │                   │            │         └ ' White Fort '
+    │   │                   │               │                   │            └ 'медеуский р-н'
+    │   │                   │               │                   └ 'history'
+    │   │                   │               └ '141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk'
+    │   │                   └ './roofsparser-addef44f7a5a.json'
+    │   └ <_FuncPtr object at 0x7f3650375cc0>
+    └ <CDLL './sheet_lib/lib.so', handle 563879c09fc0 at 0x7f36503d15d0>
+
+TypeError: sequence item 0: expected a bytes-like object, str found
+2024-03-06 04:50:01.275 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Abay Residence '
+
+ValueError: invalid literal for int() with base 10: 'abay residence'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7fc9544a4fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '1'
+    │         │           │  └ ' Abay Residence '
+    │         │           └ 'бостандыкский р-н'
+    │         └ <function append_data at 0x7fc957256c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 29, in append_data
+    lib.AppendData(GoString(cred, len(cred)),
+    │   │          │        │         └ './roofsparser-addef44f7a5a.json'
+    │   │          │        └ './roofsparser-addef44f7a5a.json'
+    │   │          └ <class 'sheet_lib.GoString'>
+    │   └ <_FuncPtr object at 0x7fc9571fe000>
+    └ <CDLL './sheet_lib/lib.so', handle 555d26e533c0 at 0x7fc957259310>
+
+TypeError: bytes or integer address expected instead of str instance
+2024-03-06 04:50:05.434 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Apple Town '
+
+ValueError: invalid literal for int() with base 10: 'apple town'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7fc9544a4fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '8'
+    │         │           │  └ ' Apple Town '
+    │         │           └ 'ауэзовский р-н'
+    │         └ <function append_data at 0x7fc957256c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 29, in append_data
+    lib.AppendData(GoString(cred, len(cred)),
+    │   │          │        │         └ './roofsparser-addef44f7a5a.json'
+    │   │          │        └ './roofsparser-addef44f7a5a.json'
+    │   │          └ <class 'sheet_lib.GoString'>
+    │   └ <_FuncPtr object at 0x7fc9571fe000>
+    └ <CDLL './sheet_lib/lib.so', handle 555d26e533c0 at 0x7fc957259310>
+
+TypeError: bytes or integer address expected instead of str instance
+2024-03-06 04:50:09.144 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' GreenLine.Asyl Mura Jubanov '
+
+ValueError: invalid literal for int() with base 10: 'greenline.asyl mura jubanov'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7fc9544a4fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '0'
+    │         │           │  └ ' GreenLine.Asyl Mura Jubanov '
+    │         │           └ 'Район не определён'
+    │         └ <function append_data at 0x7fc957256c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 29, in append_data
+    lib.AppendData(GoString(cred, len(cred)),
+    │   │          │        │         └ './roofsparser-addef44f7a5a.json'
+    │   │          │        └ './roofsparser-addef44f7a5a.json'
+    │   │          └ <class 'sheet_lib.GoString'>
+    │   └ <_FuncPtr object at 0x7fc9571fe000>
+    └ <CDLL './sheet_lib/lib.so', handle 555d26e533c0 at 0x7fc957259310>
+
+TypeError: bytes or integer address expected instead of str instance
+2024-03-06 04:50:12.800 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Gorky Park Residence '
+
+ValueError: invalid literal for int() with base 10: 'gorky park residence'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7fc9544a4fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '4'
+    │         │           │  └ ' Gorky Park Residence '
+    │         │           └ 'медеуский р-н'
+    │         └ <function append_data at 0x7fc957256c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 29, in append_data
+    lib.AppendData(GoString(cred, len(cred)),
+    │   │          │        │         └ './roofsparser-addef44f7a5a.json'
+    │   │          │        └ './roofsparser-addef44f7a5a.json'
+    │   │          └ <class 'sheet_lib.GoString'>
+    │   └ <_FuncPtr object at 0x7fc9571fe000>
+    └ <CDLL './sheet_lib/lib.so', handle 555d26e533c0 at 0x7fc957259310>
+
+TypeError: bytes or integer address expected instead of str instance
+2024-03-06 04:50:16.579 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Европолис '
+
+ValueError: invalid literal for int() with base 10: 'европолис'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7fc9544a4fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '36'
+    │         │           │  └ ' Европолис '
+    │         │           └ 'медеуский р-н'
+    │         └ <function append_data at 0x7fc957256c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 29, in append_data
+    lib.AppendData(GoString(cred, len(cred)),
+    │   │          │        │         └ './roofsparser-addef44f7a5a.json'
+    │   │          │        └ './roofsparser-addef44f7a5a.json'
+    │   │          └ <class 'sheet_lib.GoString'>
+    │   └ <_FuncPtr object at 0x7fc9571fe000>
+    └ <CDLL './sheet_lib/lib.so', handle 555d26e533c0 at 0x7fc957259310>
+
+TypeError: bytes or integer address expected instead of str instance
+2024-03-06 04:50:20.732 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' White Fort '
+
+ValueError: invalid literal for int() with base 10: 'white fort'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7fc9544a4fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '1'
+    │         │           │  └ ' White Fort '
+    │         │           └ 'медеуский р-н'
+    │         └ <function append_data at 0x7fc957256c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 29, in append_data
+    lib.AppendData(GoString(cred, len(cred)),
+    │   │          │        │         └ './roofsparser-addef44f7a5a.json'
+    │   │          │        └ './roofsparser-addef44f7a5a.json'
+    │   │          └ <class 'sheet_lib.GoString'>
+    │   └ <_FuncPtr object at 0x7fc9571fe000>
+    └ <CDLL './sheet_lib/lib.so', handle 555d26e533c0 at 0x7fc957259310>
+
+TypeError: bytes or integer address expected instead of str instance
+2024-03-06 04:50:23.960 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Айгерим '
+
+ValueError: invalid literal for int() with base 10: 'айгерим'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7fc9544a4fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '16'
+    │         │           │  └ ' Айгерим '
+    │         │           └ 'бостандыкский р-н'
+    │         └ <function append_data at 0x7fc957256c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 29, in append_data
+    lib.AppendData(GoString(cred, len(cred)),
+    │   │          │        │         └ './roofsparser-addef44f7a5a.json'
+    │   │          │        └ './roofsparser-addef44f7a5a.json'
+    │   │          └ <class 'sheet_lib.GoString'>
+    │   └ <_FuncPtr object at 0x7fc9571fe000>
+    └ <CDLL './sheet_lib/lib.so', handle 555d26e533c0 at 0x7fc957259310>
+
+TypeError: bytes or integer address expected instead of str instance
+2024-03-06 04:50:27.869 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Ак Бота '
+
+ValueError: invalid literal for int() with base 10: 'ак бота'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7fc9544a4fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '4'
+    │         │           │  └ ' Ак Бота '
+    │         │           └ 'медеуский р-н'
+    │         └ <function append_data at 0x7fc957256c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 29, in append_data
+    lib.AppendData(GoString(cred, len(cred)),
+    │   │          │        │         └ './roofsparser-addef44f7a5a.json'
+    │   │          │        └ './roofsparser-addef44f7a5a.json'
+    │   │          └ <class 'sheet_lib.GoString'>
+    │   └ <_FuncPtr object at 0x7fc9571fe000>
+    └ <CDLL './sheet_lib/lib.so', handle 555d26e533c0 at 0x7fc957259310>
+
+TypeError: bytes or integer address expected instead of str instance
+2024-03-06 04:50:34.600 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Академия-1 '
+
+ValueError: invalid literal for int() with base 10: 'академия-1'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7fc9544a4fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '1'
+    │         │           │  └ ' Академия-1 '
+    │         │           └ 'медеуский р-н'
+    │         └ <function append_data at 0x7fc957256c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 29, in append_data
+    lib.AppendData(GoString(cred, len(cred)),
+    │   │          │        │         └ './roofsparser-addef44f7a5a.json'
+    │   │          │        └ './roofsparser-addef44f7a5a.json'
+    │   │          └ <class 'sheet_lib.GoString'>
+    │   └ <_FuncPtr object at 0x7fc9571fe000>
+    └ <CDLL './sheet_lib/lib.so', handle 555d26e533c0 at 0x7fc957259310>
+
+TypeError: bytes or integer address expected instead of str instance
+2024-03-06 04:50:38.986 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Аккент '
+
+ValueError: invalid literal for int() with base 10: 'аккент'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7fc9544a4fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '55'
+    │         │           │  └ ' Аккент '
+    │         │           └ 'алатауский р-н'
+    │         └ <function append_data at 0x7fc957256c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 29, in append_data
+    lib.AppendData(GoString(cred, len(cred)),
+    │   │          │        │         └ './roofsparser-addef44f7a5a.json'
+    │   │          │        └ './roofsparser-addef44f7a5a.json'
+    │   │          └ <class 'sheet_lib.GoString'>
+    │   └ <_FuncPtr object at 0x7fc9571fe000>
+    └ <CDLL './sheet_lib/lib.so', handle 555d26e533c0 at 0x7fc957259310>
+
+TypeError: bytes or integer address expected instead of str instance
+2024-03-06 04:50:42.645 | ERROR    | __main__:parse_data:90 - error
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 79, in parse_data
+    int(csrf.lower().strip())
+        │    └ <method 'lower' of 'str' objects>
+        └ ' Акмарал '
+
+ValueError: invalid literal for int() with base 10: 'акмарал'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/src/app/./nb_parser.py", line 99, in <module>
+    parse_data()
+    └ <function parse_data at 0x7fc9544a4fe0>
+
+> File "/usr/src/app/./nb_parser.py", line 83, in parse_data
+    sheet_lib.append_data(d, csrf, str(nb), index)
+    │         │           │  │         │    └ 1
+    │         │           │  │         └ '3'
+    │         │           │  └ ' Акмарал '
+    │         │           └ 'алмалинский р-н'
+    │         └ <function append_data at 0x7fc957256c00>
+    └ <module 'sheet_lib' from '/usr/src/app/sheet_lib/__init__.py'>
+
+  File "/usr/src/app/sheet_lib/__init__.py", line 29, in append_data
+    lib.AppendData(GoString(cred, len(cred)),
+    │   │          │        │         └ './roofsparser-addef44f7a5a.json'
+    │   │          │        └ './roofsparser-addef44f7a5a.json'
+    │   │          └ <class 'sheet_lib.GoString'>
+    │   └ <_FuncPtr object at 0x7fc9571fe000>
+    └ <CDLL './sheet_lib/lib.so', handle 555d26e533c0 at 0x7fc957259310>
+
+TypeError: bytes or integer address expected instead of str instance

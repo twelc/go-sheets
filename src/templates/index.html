@@ -29,13 +29,16 @@
                             <th>Предложений</th>
                         </tr>
                     </thead>
-                    {{range $ind, $row := .Data}}
-                    <tr>
-                        {{range $ind, $cell := $row }}
-                        <td class="{{ $ind }}"> {{ $cell }}</td>
+                    <tbody id="main">
+                        {{range $ind, $row := .Data}}
+                        <tr>
+                            {{range $ind, $cell := $row }}
+                            <td class="{{ $ind }}"> {{ $cell }}</td>
+                            {{end}}
+                        </tr>
                         {{end}}
-                    </tr>
-                    {{end}}
+                    </tbody>
+                    
                 </table>
             </div>
         </main>

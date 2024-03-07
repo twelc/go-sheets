@@ -1,0 +1,7 @@
+{{range $ind, $row := .Data}}
+<tr>
+    {{range $ind, $cell := $row }}
+    <td class="{{ $ind }}"> {{ $cell }}</td>
+    {{end}}
+</tr>
+{{end}}

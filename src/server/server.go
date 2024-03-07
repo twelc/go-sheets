@@ -17,5 +17,7 @@ func Start() {
 	mux.Handle("/assets/", http.StripPrefix("/assets/", fs))
 
 	mux.HandleFunc("/", indexHandler)
+	mux.HandleFunc("/get-table-data", getTableHandler)
+	mux.HandleFunc("/get-table-filter", filteredHandler)
 	http.ListenAndServe(":"+port, mux)
 }

@@ -6,10 +6,13 @@ import (
 	"log"
 	"strconv"
 	"strings"
+	"time"
 
 	"google.golang.org/api/option"
 	"google.golang.org/api/sheets/v4"
 )
+
+var FirstTime = time.Date(2024, 3, 8, 11, 03, 0, 0, time.Now().UTC().Location())
 
 func AppendIfMissing(slice []int, i int) []int {
 	for _, ele := range slice {
@@ -104,7 +107,7 @@ func GetFiltered(querry string, min string, max string, range_ string, config Co
 	return table
 }
 
-func AppendData(name string, distrct string, value string, ind int, config Config) {
+func AppendData(name string, distrct string, value int, ind int, config Config) {
 	header := GetData(config, "A:A")
 	row := -1
 	for i, val := range header.Values {
@@ -133,5 +136,78 @@ func SetLine(values []interface{}, range_ string, config Config) {
 	srv := GetClient(&config)
 	var vr sheets.ValueRange
 	vr.Values = append(vr.Values, values)
-	srv.Spreadsheets.Values.Update(config.sheetid, fmt.Sprintf("%v!%v", config.table_name, range_), &vr).ValueInputOption("RAW").Do()
+	srv.Spreadsheets.Values.Update(config.sheetid,
+		fmt.Sprintf("%v!%v", config.table_name, range_), &vr).ValueInputOption("RAW").ValueInputOption("USER_ENTERED").Do()
+
+}
+
+func NewSheet(config Config) {
+	srv := GetClient(&config)
+	req := sheets.Request{
+		AddSheet: &sheets.AddSheetRequest{
+			Properties: &sheets.SheetProperties{
+				Title: config.table_name,
+			},
+		},
+	}
+
+	rbb := &sheets.BatchUpdateSpreadsheetRequest{
+		Requests: []*sheets.Request{&req},
+	}
+
+	_, err := srv.Spreadsheets.BatchUpdate(config.sheetid, rbb).Context(context.Background()).Do()
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
+func DeleteSheet(config Config) {
+	srv := GetClient(&config)
+	resp, err := srv.Spreadsheets.Get(config.sheetid).Fields("sheets(properties(sheetId,title))").Do()
+	if err != nil {
+		log.Fatal(err)
+	}
+	var sheetID int64
+	for _, v := range resp.Sheets {
+		prop := v.Properties
+		sheetName := prop.Title
+		if sheetName == config.table_name {
+			sheetID = prop.SheetId
+			break
+		}
+	}
+	req := sheets.Request{
+		DeleteSheet: &sheets.DeleteSheetRequest{
+			SheetId: sheetID,
+		},
+	}
+	rbb := &sheets.BatchUpdateSpreadsheetRequest{
+		Requests: []*sheets.Request{&req},
+	}
+
+	_, err = srv.Spreadsheets.BatchUpdate(config.sheetid, rbb).Context(context.Background()).Do()
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
+func GetCalculatedGraphData(querry string, sourceName string, diapRange string, end int, config Config) ([]string, []string) {
+	var data []interface{}
+	for i := 0; i < end; i++ {
+		data = append(data, fmt.Sprintf(`=SUMIF(%v!%v; "%v"; INDIRECT("%v!R1C%v:R%vC%v"; FALSE))`,
+			sourceName, diapRange, querry, sourceName, i, end, i))
+	}
+
+	SetLine(data, fmt.Sprintf("R1C1:R1C%v", end), config)
+	all := GetAll(config, fmt.Sprintf("R1C1:R1C%v", end))
+	var res, dates = []string{}, []string{}
+	fst := FirstTime
+	ii := 0
+	for i := time.Millisecond * 0; i < time.Since(FirstTime); i += time.Hour * 24 {
+		res = append(res, all[0][ii])
+		dates = append(dates, fst.Add(i).Format("02.01"))
+		ii++
+	}
+
+	return res, dates
 }

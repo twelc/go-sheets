@@ -19,5 +19,7 @@ func Start() {
 	mux.HandleFunc("/", indexHandler)
 	mux.HandleFunc("/get-table-data", getTableHandler)
 	mux.HandleFunc("/get-table-filter", filteredHandler)
+	mux.HandleFunc("/get-graph-data", getGraphHandler)
+	mux.HandleFunc("/graph", graphHandler)
 	http.ListenAndServe(":"+port, mux)
 }

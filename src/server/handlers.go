@@ -13,8 +13,14 @@ import (
 type Table struct {
 	Data [][]string
 }
+type Response struct {
+	Data []string `json:"data"`
+	Time []string `json:"time"`
+}
 
-var config = api.GetConfig("./config/credentials.json", "141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk", "default")
+var credentials = "./config/credentials.json"
+var sheetid = "141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk"
+var config = api.GetConfig(credentials, sheetid, "default")
 
 func wrap(tpl *template.Template, err error) *template.Template {
 	if err != nil {

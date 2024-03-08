@@ -23,14 +23,14 @@ func GetAll(cred string, sheet string, name string, range_ string) [][]string {
 }
 
 //export AppendData
-func AppendData(cred *C.char, sheet *C.char, sheet_name *C.char, obj_name *C.char, distrct *C.char, value *C.char, ind C.int) {
+func AppendData(cred *C.char, sheet *C.char, sheet_name *C.char, obj_name *C.char, distrct *C.char, value C.int, ind C.int) {
 	conf := lib.GetConfig(C.GoString(cred), C.GoString(sheet), C.GoString(sheet_name))
 
-	lib.AppendData(C.GoString(obj_name), C.GoString(distrct), C.GoString(value), int(ind), conf)
+	lib.AppendData(C.GoString(obj_name), C.GoString(distrct), int(value), int(ind), conf)
 }
 
 //export SaveLine
-func SaveLine(cred *C.char, sheet *C.char, sheet_name *C.char, obj_name *C.char, distrct *C.char, value *C.char, ind C.int) {
+func SaveLine(cred *C.char, sheet *C.char, sheet_name *C.char, obj_name *C.char, distrct *C.char, value C.int, ind C.int) {
 	conf := lib.GetConfig(C.GoString(cred), C.GoString(sheet), C.GoString(sheet_name))
-	lib.SetLine([]interface{}{C.GoString(obj_name), C.GoString(distrct), C.GoString(value)}, fmt.Sprintf("A%v:c%v", int(ind), int(ind)), conf)
+	lib.SetLine([]interface{}{C.GoString(obj_name), C.GoString(distrct), int(value)}, fmt.Sprintf("A%v:c%v", int(ind), int(ind)), conf)
 }

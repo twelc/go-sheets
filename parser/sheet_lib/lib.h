@@ -76,8 +76,8 @@ extern "C" {
 
 extern GoSlice GetFiltered(GoString cred, GoString sheet, GoString name, GoString range_, GoString querry, GoString min, GoString max);
 extern GoSlice GetAll(GoString cred, GoString sheet, GoString name, GoString range_);
-extern void AppendData(char* cred, char* sheet, char* sheet_name, char* obj_name, char* distrct, char* value, int ind);
-extern void SaveLine(char* cred, char* sheet, char* sheet_name, char* obj_name, char* distrct, char* value, int ind);
+extern void AppendData(char* cred, char* sheet, char* sheet_name, char* obj_name, char* distrct, int value, int ind);
+extern void SaveLine(char* cred, char* sheet, char* sheet_name, char* obj_name, char* distrct, int value, int ind);
 
 #ifdef __cplusplus
 }

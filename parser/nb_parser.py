@@ -81,8 +81,8 @@ def parse_data():
                 int(csrf.lower().strip())
             except:
                 write(f"{d}, {csrf}: {str(nb)}")
-                writer.save_data([[d, csrf, str(nb)]], index)
-                sheet_lib.append_data(csrf, d, str(nb), Global_index)
+                writer.save_data([[d, csrf, int(nb)]], index)
+                sheet_lib.append_data(csrf, d, int(nb), Global_index)
                 index += 1
             else:
                 continue

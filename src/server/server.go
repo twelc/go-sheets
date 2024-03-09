@@ -16,10 +16,10 @@ func Start() {
 	fs := http.FileServer(http.Dir("assets"))
 	mux.Handle("/assets/", http.StripPrefix("/assets/", fs))
 
-	mux.HandleFunc("/", indexHandler)
+	mux.HandleFunc("/index", indexHandler)
 	mux.HandleFunc("/get-table-data", getTableHandler)
 	mux.HandleFunc("/get-table-filter", filteredHandler)
 	mux.HandleFunc("/get-graph-data", getGraphHandler)
-	mux.HandleFunc("/graph", graphHandler)
+	mux.HandleFunc("/graph/", graphHandler)
 	http.ListenAndServe(":"+port, mux)
 }

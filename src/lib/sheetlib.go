@@ -194,17 +194,17 @@ func DeleteSheet(config Config) {
 func GetCalculatedGraphData(querry string, sourceName string, diapRange string, end int, config Config) ([]string, []string) {
 	var data []interface{}
 	for i := 0; i < end; i++ {
-		data = append(data, fmt.Sprintf(`=SUMIF(%v!%v; "%v"; INDIRECT("%v!R1C%v:R%vC%v"; FALSE))`,
+		data = append(data, fmt.Sprintf(`=SUMIF(%v!%v; "*%v*"; INDIRECT("%v!R1C%v:R%vC%v"; FALSE))`,
 			sourceName, diapRange, querry, sourceName, i, end, i))
 	}
 
 	SetLine(data, fmt.Sprintf("R1C1:R1C%v", end), config)
-	all := GetAll(config, fmt.Sprintf("R1C1:R1C%v", end))
+	all := GetAll(config, fmt.Sprintf("R1C1:R1C%v", end))[0][2:]
 	var res, dates = []string{}, []string{}
 	fst := FirstTime
 	ii := 0
 	for i := time.Millisecond * 0; i < time.Since(FirstTime); i += time.Hour * 24 {
-		res = append(res, all[0][ii])
+		res = append(res, all[ii])
 		dates = append(dates, fst.Add(i).Format("02.01"))
 		ii++
 	}

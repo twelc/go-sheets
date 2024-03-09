@@ -43,7 +43,7 @@ func getGraphHandler(w http.ResponseWriter, r *http.Request) {
 		conf := api.GetConfig(credentials, sheetid, hash)
 		api.NewSheet(conf)
 		res, datas := api.GetCalculatedGraphData(querry, "history", "A:B", 3500, conf)
-		//defer api.DeleteSheet(conf)
+		defer api.DeleteSheet(conf)
 		w.Header().Set("Content-Type", "application/json")
 		resp := Response{
 			Data: res,

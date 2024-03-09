@@ -9,6 +9,7 @@ function getGraphData(){
         dataType: "json",
         success: function (response) {
             console.log(response.data)
+            $("#wait").hide()
             new Chart(document.getElementById("line-chart"), {
                 type: 'line',
                 data: {

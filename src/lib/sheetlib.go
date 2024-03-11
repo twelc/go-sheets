@@ -191,11 +191,11 @@ func DeleteSheet(config Config) {
 	}
 }
 
-func GetCalculatedGraphData(querry string, sourceName string, diapRange string, end int, config Config) ([]string, []string) {
+func GetCalculatedGraphData(querry string, sourceName string, end int, config Config) ([]string, []string) {
 	var data []interface{}
 	for i := 0; i < end; i++ {
-		data = append(data, fmt.Sprintf(`=SUMIF(%v!%v; "*%v*"; INDIRECT("%v!R1C%v:R%vC%v"; FALSE))`,
-			sourceName, diapRange, querry, sourceName, i+1, end, i+1))
+		data = append(data, fmt.Sprintf(`=SUMIF(%v!A:A; "*%v*"; INDIRECT("%v!R1C%v:R%vC%v"; FALSE))+SUMIF(%v!B:B; "*%v*"; INDIRECT("%v!R1C%v:R%vC%v"; FALSE))`,
+			sourceName, querry, sourceName, i+1, end, i+1, sourceName, querry, sourceName, i+1, end, i+1))
 	}
 
 	SetLine(data, fmt.Sprintf("R1C1:R1C%v", end), config)

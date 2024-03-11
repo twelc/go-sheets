@@ -18,7 +18,8 @@ sheet_lib.make_config('./roofsparser-addef44f7a5a.json',
                       "141maOrpeeFsydVAWP-kIaziMCHn_fI8nQv0mFB78TVk",
                       "history")
 
-Global_index = 0
+with open("index_backup.txt", "r") as file:
+    Global_index = int(file.read())
 
 logger.add("log.log")
 
@@ -103,6 +104,8 @@ if __name__ == "__main__":
         time.sleep(10)
         if datetime.datetime.now() > next:
             Global_index+=1
+            with open("index_backup.txt", "w") as file:
+                file.write(str(Global_index))
             next = datetime.datetime.now() + datetime.timedelta(days=1)
             parse_data()
 

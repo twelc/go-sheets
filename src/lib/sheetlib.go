@@ -199,12 +199,12 @@ func GetCalculatedGraphData(querry string, sourceName string, diapRange string, 
 	}
 
 	SetLine(data, fmt.Sprintf("R1C1:R1C%v", end), config)
-	all := GetAll(config, fmt.Sprintf("R1C1:R1C%v", end))[0][2:]
+	all := GetAll(config, fmt.Sprintf("R1C1:R1C%v", end))
 	var res, dates = []string{}, []string{}
 	fst := FirstTime
-	ii := 0
+	ii := 2
 	for i := time.Millisecond * 0; i < time.Since(FirstTime); i += time.Hour * 24 {
-		res = append(res, all[ii])
+		res = append(res, all[0][ii])
 		dates = append(dates, fst.Add(i).Format("02.01"))
 		ii++
 	}
